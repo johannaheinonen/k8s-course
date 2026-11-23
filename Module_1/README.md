@@ -9,17 +9,17 @@ __Steps__:
    
 2. ```ssh``` to the controller node EC2 and do the following:  
 - open nano editor: ```nano k8s-controller.sh```
-- copy the contents of ```k8s-controller.sh``` script and change the ```NODE_IP="<Controller Node private IP-address>"```  
+- copy the contents of ```k8s-controller.sh``` script here and change the ```NODE_IP="<Controller Node private IP-address>"```  
 - give executive permissions to the script: ```chmod +x k8s-controller.sh```  
 - run the script: ```./k8s-controller.sh```
 - wait until the controller node is ready. To check this run the following command on controller node:
 ```
-kubectl  get nodes gives
+kubectl  get nodes
 
-NAME       STATUS     ROLES           AGE
-node1      Ready      control-plane   2m
+NAME             STATUS   ROLES           AGE   VERSION
+ip-172-31-14-7   Ready    control-plane   41m   v1.37.0
 ```
-- in Kubernetes cluster all worker nodes need to be joined to the controller. This is done with join-command:  ```kubeadm token create --print-join-command```  The output looks like:
+In Kubernetes cluster all worker nodes need to be joined to the controller. This is done with join-command:  ```kubeadm token create --print-join-command```  which gives the output:
 ```
 kubeadm join <Controller node IP-address>:6443 \  
   --token abcdef.1234567890123456 \  
@@ -30,7 +30,13 @@ copy this command, it is later run in the worker node.
 - open nano editor: ```nano k8s-worker.sh```  
 - copy the contents of ```k8s-worker.sh``` script and change the ```NODE_IP="<Worker Node private IP-address>"``` and ```CONTROL_PLANE_IP="<Controller Node private IP-address>"```  
 - give executive permissions to the script: ```chmod +x k8s-worker.sh```
-- run the script: ```./k8s-worker.sh```  
+- run the script: ```./k8s-worker.sh```
+- run the above generated ```kubeadm join``` command. The output of ```kubectl  get nodes``` should show two nodes in state ```ready```.  
 
-5. Copy the ~/.kube/config file from controller node to the workstation. 
+4. The Kubernetes cluster is now installed. In controller node check that the nodes and pods are all ```running```:
+```
+kubectl get nodes
+kubectl get pods -A
+```
+5. In order to use ```kubectl``` from the workstation, copy the ```~/.kube/config``` file from the controller node to the workstation. (Instructions in the workstation folder)  
 
