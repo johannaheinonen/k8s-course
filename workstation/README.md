@@ -11,3 +11,4 @@ export AWS_SESSION_TOKEN="XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
 ```
 - Install the following tools:
     - Terraform
+    - after Kubernetes is installed copy 
