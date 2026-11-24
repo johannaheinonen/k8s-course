@@ -16,7 +16,7 @@ The EC2 instance for the workstation is launched via AWS management console with
 - Advanced details -> IAM Instance profile -> LabInstanceProfile  
 Other parameters can be left at their default values.  
 
-Next connect to the EC2 instance using SSH. For this download the SSH key (labsuser.pem) from AWS Academy learner lab.  
+Next connect to the EC2 instance using SSH. For this download the SSH key (labsuser.pem) from AWS Academy learner lab. (If the local machine is linux/MacOS change the permissions: ```chmod 400 labsuser.pem```.)  
 
 <img src="../pictures/aws_creds2.png">
 
@@ -41,21 +41,14 @@ aws sts get-caller-identity
     "Arn": "arn:aws:sts::75573XXXXXX:assumed-role/voclabs/user561XXXX=_Student_View__N_N"
 }
 ```
-Install terraform: use script
-- Install the following tools:
-    - Terraform  - install script
-    - kubectl - install script
-    - (AWS CLI is pre-installed in EC2)
-  
-    - after Kubernetes is installed
-      ```
-      mkdir ~/.kube
-      copy/paste ssh key to file labsuser.pem
-      copy/paste ssh key: labsuser.pem 
-      in linux: chmod 400 labsuser.pem
+Install **terraform** with script ```install_terraform.sh```  
+Install **kubectl** with script ```install_kubectl.sh```  
 
-      scp -i labsuser.pem admin@172.31.4.141:~/.kube/config ~/.kube/config   ## controller private IP
+After Kubernetes is installed, copy the ```~/.kube/config``` from the Kubernetes controller node to the workstation.  
+```
+mkdir ~/.kube
+scp -i labsuser.pem admin@<K8s controller IP-address>:~/.kube/config ~/.kube/config
+```
+To test that kubectl is working properly run the command:  ```kubectl get nodes```  
 
-      test kubectl: kubectl get nodes
-      ```
       
