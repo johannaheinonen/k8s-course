@@ -1,6 +1,8 @@
 ## Workstation
 
-A workstation is needed in order to install and operate Kubernetes, use AWS cli and run terraform. These instructions assume that the workstation is an Amazon EC2 instance running Debian 13.x; however, any Linux machine can be used. More general instructions for setting up a workstation are available here:: https://github.com/johannaheinonen/johanna-test-repo/blob/main/module_6.md  
+A workstation is required to install and manage Kubernetes, use the AWS CLI, and run Terraform. Before starting, the workstation must be properly configured with the necessary tools and access credentials.  
+These instructions use an Amazon EC2 instance running Debian 13.x as the workstation. However, any Linux workstation can be used, including a physical PC, laptop, virtual machine, or cloud-based Linux instance. General workstation setup instructions are available here: https://github.com/johannaheinonen/johanna-test-repo/blob/main/module_6.md  
+
 
 ### EC2 for Workstation
 
