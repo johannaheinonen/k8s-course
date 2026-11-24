@@ -44,7 +44,7 @@ Microservices address these limitations by decomposing an application into small
 - Better alignment with cloud platforms and distributed environments.
 
 
-<img src="./pictures/monolith_vs_microservice.png" width="500">
+<img src="../pictures/monolith_vs_microservice.png" width="500">
 
 Microservices and containers are complementary concepts. Microservices define how an application is structured, while containers define how services are packaged and run. In a typical cloud-native application, each microservice is packaged into its own container, and platforms such as Kubernetes are used to deploy, scale, and manage these containers across a cluster. 
 
@@ -119,7 +119,7 @@ A core Kubernetes concept is **desired state**. Instead of manually managing run
 By abstracting the underlying infrastructure, Kubernetes provides a consistent platform for deploying, scaling, and operating applications across clusters of any size.
 
 
-<img src="./pictures/k8s_arch.png" width="500">
+<img src="../pictures/k8s_arch.png" width="500">
 
 Kubernetes provides comprehensive official documentation, available at https://kubernetes.io/docs/home/, which can be used as a reference throughout the course.
 
