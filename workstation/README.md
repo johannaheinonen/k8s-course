@@ -18,7 +18,7 @@ Other parameters can be left at their default values.
 
 Next connect to the EC2 instance using SSH. For this download the SSH key (labsuser.pem) from AWS Academy learner lab.  
 
-<img src="../pictures/aws_creds.png">
+<img src="../pictures/aws_creds2.png">
 
 ```ssh -i labsuser.pem admin@<EC2-public-IP>```  
 
