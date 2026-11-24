@@ -22,27 +22,26 @@ Next connect to the EC2 instance using SSH. For this download the SSH key (labsu
 
 ```ssh -i labsuser.pem admin@<EC2-public-IP>```  
 
-__Required Tools__
-In EC2 instance the AWS CLI is already installed and available. If using other workstration than EC2, AWS CLI must be separately installed. 
+__Required Tools__  
+In EC2 instance the **AWS CLI** is already installed and available. If using other workstation than EC2, AWS CLI must be separately installed. In both cases AWS credentials need to be exported from AWS Learner Lab.  
+Notice: These credentials must be exported every time the Learner Lab environment is started.  
   
-- AWS Learner Lab credentials (AWS Details tab) - export 
-   - Notice: these need to be set every time the Learner Lab environment is started.  
-   - This makes it possible to use aws cli. Test ```aws sts get-caller-identity```  
 ```
 export AWS_ACCESS_KEY_ID="..."
 export AWS_SECRET_ACCESS_KEY="..."
 export AWS_SESSION_TOKEN="..."
 export AWS_DEFAULT_REGION="eu-north-1"
 ```
-to test that aws cli works:
+To test that aws cli is working properly run the command:  
 ```
 aws sts get-caller-identity
 {
-    "UserId": "AROA275LE6DVAATO4FOFG:user5618902=_Student_View__Johanna_Heinonen",
-    "Account": "755736309994",
-    "Arn": "arn:aws:sts::755736309994:assumed-role/voclabs/user5618902=_Student_View__Johanna_Heinonen"
+    "UserId": "AROA275XXXXXXXXXX:user561XXXX=_Student_View__N_N",
+    "Account": "75573XXXXXX",
+    "Arn": "arn:aws:sts::75573XXXXXX:assumed-role/voclabs/user561XXXX=_Student_View__N_N"
 }
 ```
+Install terraform: use script
 - Install the following tools:
     - Terraform  - install script
     - kubectl - install script
