@@ -1,18 +1,19 @@
 # Kubernetes Installation (unmanaged)
 
-__The target__: Kubernetes installation to two EC2 instances by using __kubeadm__ tool which is the official Kubernetes command-line tool for bootstrapping minimum viable clusters.  
+__The target__: Install a Kubernetes cluster on two Amazon EC2 instances using __kubeadm__, the official Kubernetes tool for bootstrapping and managing Kubernetes clusters.  
 
-__Pre-requisite__: workstation where terraform, kubectl and other necessary tools are installed.  
+__Prerequisites__: A Linux workstation with the required tools installed and configured, including Terraform, kubectl, the AWS CLI, and SSH access.  
 
 __Steps__:  
-1. Use terraform (main.tf) to create two EC2 instances (one controller node and one worker node) and a security group.
+1. Use terraform (terraform/main.tf) to create two EC2 instances (one controller node and one worker node) and a security group.
    
 2. ```ssh``` to the controller node EC2 and do the following:  
-- open nano editor: ```nano k8s-controller.sh```
-- copy the contents of ```k8s-controller.sh``` script here and change the ```NODE_IP="<Controller Node private IP-address>"```  
-- give executive permissions to the script: ```chmod +x k8s-controller.sh```  
-- run the script: ```./k8s-controller.sh```
-- wait until the controller node is ready. To check this run the following command on controller node:
+- Create a new script file and open it in the Nano editor: ```nano k8s-controller.sh```
+- Copy the contents of the ```k8s-controller.sh``` script into the editor and update the variable ```NODE_IP="<Controller Node private IP-address>"```
+- Save the file and exit nano.
+- Make the script executable: ```chmod +x k8s-controller.sh```   
+- Run the script: ```./k8s-controller.sh```
+- Wait for the installation to complete and the controller node to become ready. To verify the node status, run the following command on the controller node:
 ```
 kubectl  get nodes
 
