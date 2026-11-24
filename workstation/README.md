@@ -50,6 +50,7 @@ After Kubernetes is installed, copy the ```~/.kube/config``` from the Kubernetes
 mkdir ~/.kube
 scp -i labsuser.pem admin@<K8s controller IP-address>:~/.kube/config ~/.kube/config
 ```
+After copying the kubeconfig file, set its permissions to 600: ```chmod 600 ~/.kube/config```. This restricts access to the file so that only the current user can read and modify it.  
 Notice: In a kubeadm-based Kubernetes cluster, the original administrator kubeconfig file is stored at: ```/etc/kubernetes/admin.conf``` during cluster setup and copied to ```~/.kube/config```.   
 To test that kubectl is working properly run the command:  ```kubectl get nodes```  
 
