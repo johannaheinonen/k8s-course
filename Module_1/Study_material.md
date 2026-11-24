@@ -23,7 +23,7 @@ These business requirements exposed the limitations of traditional IT infrastruc
 __Cloud-native computing__ emerged because modern businesses needed faster delivery, greater scalability, higher reliability, and more efficient operations than traditional IT infrastructure could provide. Cloud-native computing makes it possible to build and operate applications that can scale efficiently, recover automatically from failures, and be updated rapidly. It combines containers, automation, distributed systems, and modern software delivery practices into a unified operating model.
 
 
-<img src="./pictures/cloudnative_drivers.png">
+<img src="../../pictures/cloudnative_drivers.png">
  
           
 ## From Monoliths to Microservices
