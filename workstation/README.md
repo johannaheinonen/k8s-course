@@ -6,14 +6,15 @@ These instructions use an Amazon EC2 instance running Debian 13.x as the worksta
 
 
 ### EC2 
+  
+The workstation EC2 instance is launched from the AWS Management Console using the following parameters:
+- name: workstation  
+- Amazon Machine image (AMI): debian  
+- instance type: t2.micro  
+- security group: Create a new security group and enable SSH access  
+- key pair: vockey  
+- IAM instance profile: LabInstanceProfile (Advanced details -> IAM Instance profile)  
 
-The EC2 instance for the workstation is launched via AWS management console with the following parameters:  
-- name: workstation
-- Amazon Machine image (AMI): debian
-- instance type: t2.micro
-- new security group, ssh access enabled
-- key pair: vockey
-- Advanced details -> IAM Instance profile -> LabInstanceProfile  
 Other parameters can be left at their default values.  
 
 Next connect to the EC2 instance using SSH. For this download the SSH key (labsuser.pem) from AWS Academy learner lab. (If the local machine is linux/MacOS change the permissions: ```chmod 400 labsuser.pem```.)  
@@ -24,7 +25,7 @@ Next connect to the EC2 instance using SSH. For this download the SSH key (labsu
 
 __Required Tools__  
 In EC2 instance the **AWS CLI** is already installed and available. If using other workstation than EC2, AWS CLI must be separately installed. In both cases AWS credentials need to be exported from AWS Learner Lab.  
-Notice: These credentials must be exported every time the Learner Lab environment is started.  
+Notice: These credentials must be exported **every time** the Learner Lab environment is started.  
   
 ```
 export AWS_ACCESS_KEY_ID="..."
