@@ -45,7 +45,7 @@ aws sts get-caller-identity
 Install **terraform** with script ```install_terraform.sh```  
 Install **kubectl** with script ```install_kubectl.sh```  
 
-After Kubernetes is installed, copy the ```~/.kube/config``` from the Kubernetes controller node to the workstation.  
+**After** Kubernetes is installed, copy the ```~/.kube/config``` from the Kubernetes controller node to the workstation.  
 ```
 mkdir ~/.kube
 scp -i labsuser.pem admin@<K8s controller IP-address>:~/.kube/config ~/.kube/config
