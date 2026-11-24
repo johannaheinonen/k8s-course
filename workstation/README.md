@@ -18,7 +18,7 @@ Other parameters can be left at their default values.
 
 Next connect to the EC2 instance using SSH. For this download the SSH key (labsuser.pem) from AWS Academy learner lab.  
 
-<img src="./pictures/aws_creds.png" width="300">
+<img src="../pictures/aws_creds.png" width="300">
 - download labsuser.pem and ssh to workstation ec2.
   
 - AWS Learner Lab credentials (AWS Details tab) - export 
