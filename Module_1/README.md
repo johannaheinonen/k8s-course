@@ -5,9 +5,18 @@ __The target__: Install a Kubernetes cluster on two Amazon EC2 instances using _
 __Prerequisites__: A Linux workstation with the required tools installed and configured, including Terraform, kubectl, the AWS CLI, and SSH access.  
 
 __Steps__:  
-1. Use terraform (terraform/main.tf) to create two EC2 instances (one controller node and one worker node) and a security group.
+1. Use terraform (terraform/main.tf) to create two EC2 instances (one controller node and one worker node) and a security group. In the workstation:
+- Create a new directory in the workstation for terraform files: ```mkrir terraform```  
+- Create a new file and open it in the Nano editor: ```main.tf```
+- Copy the contents of the ```main.tf``` into the editor, save the file and exit nano.  
+- Run the following commands:
+```
+terraform init
+terraform plan
+terraform apply
+```
    
-2. ```ssh``` to the controller node EC2 and do the following:  
+2. ```ssh``` to the **controller node** EC2 and do the following:  
 - Create a new script file and open it in the Nano editor: ```nano k8s-controller.sh```
 - Copy the contents of the ```k8s-controller.sh``` script into the editor and update the variable ```NODE_IP="<Controller Node private IP-address>"```
 - Save the file and exit nano.
@@ -27,12 +36,13 @@ kubeadm join <Controller node IP-address>:6443 \
 ```
 copy this command, it is later run in the worker node.  
 
-3. ```ssh``` to the worker node EC2 and do the following:  
+3. ```ssh``` to the **worker node** EC2 and do the following:  
 - open nano editor: ```nano k8s-worker.sh```  
-- copy the contents of ```k8s-worker.sh``` script and change the ```NODE_IP="<Worker Node private IP-address>"``` and ```CONTROL_PLANE_IP="<Controller Node private IP-address>"```  
-- give executive permissions to the script: ```chmod +x k8s-worker.sh```
-- run the script: ```./k8s-worker.sh```
-- run the above generated ```kubeadm join``` command. The output of ```kubectl  get nodes``` should show two nodes in state ```ready```.  
+- copy the contents of ```k8s-worker.sh``` script into the editor and update the variables ```NODE_IP="<Worker Node private IP-address>"``` and ```CONTROL_PLANE_IP="<Controller Node private IP-address>"```  
+- Save the file and exit nano.  
+- Make the script executable: ```chmod +x k8s-worker.sh```  
+- run the script: ```./k8s-worker.sh```  
+- run the above generated ```kubeadm join``` command. After this the output of ```kubectl  get nodes``` should show two nodes in state ```ready```.  
 
 4. The Kubernetes cluster is now installed. In controller node check that the nodes and pods are all ```running```:
 ```
