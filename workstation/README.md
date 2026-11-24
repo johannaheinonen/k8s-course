@@ -52,7 +52,7 @@ scp -i labsuser.pem admin@<K8s controller IP-address>:~/.kube/config ~/.kube/con
 
 chmod 600 ~/.kube/config
 ```
-Notice: In a kubeadm-based Kubernetes cluster, the original administrator kubeconfig file is stored at: ```/etc/kubernetes/admin.conf``` during cluster setup and copied to ```~/.kube/config```. To check what is stored in config file (```~/.kube/config```) run the command:    
+Notice: In a kubeadm-based Kubernetes cluster, the original administrator kubeconfig file is stored at: ```/etc/kubernetes/admin.conf``` but during the cluster setup it is copied to ```~/.kube/config```. To check what is stored in config file (```~/.kube/config```) run the command:    
 ```
 kubectl config view
 ```
