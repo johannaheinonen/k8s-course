@@ -13,21 +13,26 @@ The EC2 instance for the workstation is launched via AWS management console with
 - instance type: t2.micro
 - new security group, ssh access enabled
 - key pair: vockey
-- Advanced details -> IAM Instance profile -> LabInstanceProfile
+- Advanced details -> IAM Instance profile -> LabInstanceProfile  
 Other parameters can be left at their default values.  
 
 Next connect to the EC2 instance using SSH. For this download the SSH key (labsuser.pem) from AWS Academy learner lab.  
 
 <img src="../pictures/aws_creds.png" width="700">
-- download labsuser.pem and ssh to workstation ec2.
+
+```ssh -i labsuser.pem admin@<EC2-public-IP>```  
+
+__Required Tools__
+In EC2 instance the AWS CLI is already installed and available. If using other workstration than EC2, AWS CLI must be separately installed. 
   
 - AWS Learner Lab credentials (AWS Details tab) - export 
    - Notice: these need to be set every time the Learner Lab environment is started.  
    - This makes it possible to use aws cli. Test ```aws sts get-caller-identity```  
 ```
-export AWS_ACCESS_KEY_ID="XXXXXXXXXXXXXXXXXXX"
-export AWS_SECRET_ACCESS_KEY="XXXXXXXXXXXXXXXXXXXXX"
-export AWS_SESSION_TOKEN="XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+export AWS_ACCESS_KEY_ID="..."
+export AWS_SECRET_ACCESS_KEY="..."
+export AWS_SESSION_TOKEN="..."
+export AWS_DEFAULT_REGION="eu-north-1"
 ```
 to test that aws cli works:
 ```
