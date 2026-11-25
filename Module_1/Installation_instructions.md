@@ -29,9 +29,9 @@ kubectl  get nodes
 NAME             STATUS   ROLES           AGE   VERSION
 ip-172-31-14-7   Ready    control-plane   41m   v1.37.0
 ```
-In Kubernetes cluster all worker nodes need to be joined to the controller. This is done with join-command:  ```kubeadm token create --print-join-command```  which gives the output:
+In Kubernetes cluster all worker nodes need to be joined to the controller. This is done with join-command:  ```sudo kubeadm token create --print-join-command```  which gives the output:
 ```
-kubeadm join <Controller node IP-address>:6443 \  
+sudo kubeadm join <Controller node IP-address>:6443 \  
   --token abcdef.1234567890123456 \  
 ```
 copy this command, it is later run in the worker node.  
