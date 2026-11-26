@@ -2,7 +2,7 @@
 
 Kubernetes is a container orchestration platform composed of multiple components that work together to automate the deployment, scaling, networking, and management of containerized applications https://kubernetes.io/docs/concepts/overview/components/: 
 
-<img src="./pictures/k8s_processes.png" >
+<img src="../pictures/k8s_processes.png" >
 
 
 
