@@ -21,7 +21,7 @@ This weather application is built using a microservices architecture and consist
     - Implemented using HashiCorp HTTP Echo.
 
 
-<img src="./pictures/weather_app.png" width="1000">
+<img src="../pictures/weather_app.png" width="1000">
 
 ### 1. Create the Weather API Deployment (backend)  
 ```kubectl create deployment weather-api --image=hashicorp/http-echo -- /http-echo -text='{"city":"Helsinki","temperature":5}'```  
@@ -126,7 +126,7 @@ A Deployment manages application Pods, while a Service provides a single, stable
 **3.** Which port does the Service send traffic to?  
 - Inside the Pod, containerPort marks the port the application is listening on. Once the Service finds the right Pods, it uses targetPort to forward traffic directly to that matching containerPort.
 
-<img src="./pictures/manifests.png" width="1000">
+<img src="../pictures/manifests.png" width="1000">
 
 **Example:**  
 <details>
@@ -264,7 +264,7 @@ The weather application was tested by starting a test container and running the 
 
 **Example:** Simple Weather Application with NodePort  
 
-<img src="./pictures/nodeport.png" width="600">
+<img src="../pictures/nodeport.png" width="600">
 
 
 
@@ -316,5 +316,5 @@ curl http://54.210.157.18:30080
 
 ```
 
-<img src="./pictures/nodeport_test.png" width="400">
+<img src="../pictures/nodeport_test.png" width="400">
 
