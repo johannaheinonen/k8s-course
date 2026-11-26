@@ -17,7 +17,7 @@ terraform apply
 ```
    
 2. ```ssh``` to the **controller node** EC2 and do the following:  
-- Create a new script file and open it in the Nano editor: ```nano k8s-controller.sh```
+- Open Nano editor: ```nano k8s-controller.sh```
 - Copy the contents of the ```k8s-controller.sh``` script into the editor and update the variable ```NODE_IP="<Controller Node private IP-address>"```
 - Save the file and exit nano.
 - Make the script executable: ```chmod +x k8s-controller.sh```   
