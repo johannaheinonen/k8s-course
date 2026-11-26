@@ -26,7 +26,7 @@ Addons extend the functionality of Kubernetes. A few important examples include:
 - __Web UI__ (Dashboard) for cluster management via a web interface.  
 
 
-<img src="./pictures/k8s_arch_details.png" >  
+<img src="../pictures/k8s_arch_details.png" >  
 
 Kubernetes components work together to create a self-managed, self-healing, and automated cluster:  
 - Users define the __desired state__ of the cluster (for example, the number of application instances to run).
@@ -43,7 +43,7 @@ Deploying an application in Kubernetes involves creating resources, which Kubern
 - __Deployment__ is a Kubernetes resource that manages Pods and ensures that the desired number of application instances are running. It is a 'blueprint' of the application. It also provides scaling, updates, self-healing, and rollback capabilities.
 - __Service__ is a Kubernetes resource that provides a stable network endpoint (IP address and DNS name) for accessing one or more Pods. Since Pods are ephemeral and their IP addresses can change when they are recreated, a Service provides a permanent address that remains unchanged. It automatically routes and load-balances traffic to the currently available Pods behind the Service.  
 
-<img src="./pictures/k8s_service.png" width="300">
+<img src="../pictures/k8s_service.png" width="300">
 
 Notice: Namespace is a Kubernetes feature that allows a single cluster to be divided into separate virtual environments. It provides a mechanism for isolating groups of resources within a single cluster. Most Kubernetes resources are namespaced, meaning they belong to a specific namespace. If no namespace is specified when creating a resource such as a Deployment, Service, or Pod, Kubernetes automatically creates it in the default namespace.  
 
