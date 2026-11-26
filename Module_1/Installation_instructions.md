@@ -5,8 +5,8 @@ __The target__: Install a Kubernetes cluster on two Amazon EC2 instances using _
 __Prerequisites__: A Linux workstation with the required tools installed and configured, including Terraform, kubectl, the AWS CLI, and SSH access.  
 
 __Steps__:  
-1. Use terraform (terraform/main.tf) to create two EC2 instances (one controller node and one worker node) and a security group. In the workstation:
-- Create a new directory in the workstation for terraform files: ```mkdir terraform```  
+1. Use terraform (terraform/main.tf) to create two EC2 instances (one controller node and one worker node) and a security group. In the **workstation**:
+- Create a new directory for terraform files: ```mkdir terraform```  
 - Create a new file and open it in the Nano editor: ```main.tf```
 - Copy the contents of the ```main.tf``` into the editor, save the file and exit nano.  
 - Run the following commands:
