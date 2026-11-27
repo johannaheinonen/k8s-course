@@ -46,6 +46,7 @@ Remember to copy ```labsuser.pem``` also to the EC2 workstation. This key is req
 
 Install **terraform** with script ```install_terraform.sh```  
 Install **kubectl** with script ```install_kubectl.sh```  
+Install **helm** package manager with script ```install_helm.sh```  
 
 **After** Kubernetes is installed, copy the ```~/.kube/config``` from the Kubernetes controller node to the workstation and set its permissions to 600. This restricts access to the file so that only the current user can read and modify it.  
 ```
