@@ -24,7 +24,7 @@ Next connect to the EC2 instance using SSH. For this download the SSH key (labsu
 ```ssh -i labsuser.pem admin@<EC2-public-IP>```  
 
 __Required Tools__  
-In EC2 instance the **AWS CLI** is already installed and available. If using other workstation than EC2, AWS CLI must be separately installed. In both cases AWS credentials need to be exported from AWS Learner Lab.  
+In EC2 instance the **AWS CLI** is already installed and available. If using other workstation than EC2, AWS CLI must be separately installed. In both cases AWS credentials need to be exported from AWS Learner Lab (needed when accessing EKS).  
 Notice: These credentials must be exported **every time** the Learner Lab environment is started.  
   
 ```
@@ -42,6 +42,8 @@ aws sts get-caller-identity
     "Arn": "arn:aws:sts::75573XXXXXX:assumed-role/voclabs/user561XXXX=_Student_View__N_N"
 }
 ```
+Remember to copy ```labsuser.pem``` also to the EC2 workstation. This key is required to connect to the Kubernetes controller and use kubectl to manage the cluster.
+
 Install **terraform** with script ```install_terraform.sh```  
 Install **kubectl** with script ```install_kubectl.sh```  
 
